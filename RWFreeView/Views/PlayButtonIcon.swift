@@ -40,7 +40,11 @@ struct PlayButtonIcon: View {
   var body: some View {
     ZStack {
       RoundedRectangle(cornerRadius: radius)
-        .fill(Color.gradientDark)
+        .fill(
+          LinearGradient(
+            gradient: gradientColors,
+            startPoint: .leading,
+            endPoint: .trailing))
         .frame(width: width, height: height)
       Image(systemName: "play.circle.fill")
         .font(.title)

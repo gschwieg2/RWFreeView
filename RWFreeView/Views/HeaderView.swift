@@ -50,6 +50,12 @@ struct HeaderView: View {
       HStack {
         Text("\(count) Episodes")
         Spacer()
+        Menu("\(Image(systemName: "filemenu.and.cursorarrow"))") {
+          Button("10 results/page") { }
+          Button("20 results/page") { }
+          Button("30 results/page") { }
+          Button("No change") { }
+        }
         Picker("", selection: $sortOn) {
           Text("New").tag("new")
           Text("Popular").tag("popular")

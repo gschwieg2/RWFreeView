@@ -55,7 +55,23 @@ struct EpisodeView: View {
       .font(.footnote)
       .foregroundColor(Color(UIColor.systemGray))
     }
+    .padding(10)
+    .frame(width: isIPad ? 644 : nil)
+    .background(Color.itemBkgd)
+    .cornerRadius(15)
+    .shadow(color: Color.black.opacity(0.1), radius: 10)
+    
   }
+  
+  @Environment(\.verticalSizeClass) var
+    verticalSizeClass: UserInterfaceSizeClass?
+  @Environment(\.horizontalSizeClass) var
+    horizontalSizeClass: UserInterfaceSizeClass?
+  var isIPad: Bool {
+    horizontalSizeClass == .regular &&
+      verticalSizeClass == .regular
+  }
+  
 }
 
 struct EpisodeView_Previews: PreviewProvider {
